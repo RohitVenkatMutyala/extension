@@ -1,26 +1,29 @@
 {
   "name": "viz-runner",
   "displayName": "viz-runner",
- "description": "Viz Runner is a VS Code extension for compiling and visualizing VizLang programs. It runs a Docker-based compiler and provides step-by-step insights into the compilation pipeline, including tokens, AST, IR, optimization, and assembly output.",
+  "description": "viz-runner is a VS Code extension for compiling and visualizing VizLang, a custom language designed to reveal how a compiler works (usually a black box). It uses a Docker-based compiler to show step-by-step stages like tokens, AST, IR, optimization, and assembly output.",
   "publisher": "RohithVenkatMutyala",
-  "version": "0.0.2",
+  "version": "2.1.1",
   "engines": {
-    "vscode": "^1.110.0"
+    "vscode": "^1.70.0"
   },
-  
   "categories": [
     "Other"
   ],
-  "icon":"icon.ico",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RohitVenkatMutyala/extension"
+  },
+  "icon": "i.png",
   "activationEvents": [
     "onStartupFinished"
-],
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-       "command": "viz.start",
-      "title": "Start Viz Container"
+        "command": "viz.start",
+        "title": "Start Viz Container"
       }
     ]
   },
@@ -28,18 +31,16 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src",
-    "test": "vscode-test"
+    "lint": "eslint src"
   },
   "devDependencies": {
-    "@types/vscode": "^1.110.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "typescript-eslint": "^8.56.1",
+    "@types/node": "^22.19.17",
+    "@types/vscode": "^1.70.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.39.3",
     "typescript": "^5.9.3",
-    "@vscode/test-cli": "^0.0.12",
-    "@vscode/test-electron": "^2.5.2"
+    "typescript-eslint": "^8.56.1"
   }
 }

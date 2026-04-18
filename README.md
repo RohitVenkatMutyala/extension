@@ -274,10 +274,10 @@ int main() {
 }
 ```
 
-![AST](./assets/area_ast.png)
-![Semantic](./assets/area_semantic.png)
-![IR](./assets/area_ir.png)
-![Execution](./assets/area_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/area_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/area_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/area_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/area_exe.png)
 
 ---
 
@@ -323,10 +323,10 @@ int main() {
 }
 ```
 
-![AST](./assets/insertion_sort_ast.png)
-![Semantic](./assets/insertion_sort_semantic.png)
-![IR](./assets/insertion_sort_ir.png)
-![Execution](./assets/insertion_sort_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/insertion_sort_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/insertion_sort_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/insertion_sort_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/insertion_sort_exe.png)
 
 ---
 
@@ -360,10 +360,10 @@ int main() {
 }
 ```
 
-![AST](./assets/sum_ast.png)
-![Semantic](./assets/sum_semantic.png)
-![IR](./assets/sum_ir.png)
-![Execution](./assets/sum_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/sum_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/sum_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/sum_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/sum_exe.png)
 
 ---
 
@@ -402,10 +402,10 @@ int main() {
 }
 ```
 
-![AST](./assets/swap_ast.png)
-![Semantic](./assets/swap_semantic.png)
-![IR](./assets/swap_ir.png)
-![Execution](./assets/swap_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/swap_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/swap_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/swap_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/swap_exe.png)
 
 ---
 
@@ -447,10 +447,10 @@ int main() {
 }
 ```
 
-![AST](./assets/tower_of_hanoi_ast.png)
-![Semantic](./assets/tower_of_hanoi_semantic.png)
-![IR](./assets/tower_of_hanoi_ir.png)
-![Execution](./assets/tower_of_hanoi_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/tower_of_hanoi_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/tower_of_hanoi_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/tower_of_hanoi_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/tower_of_hanoi_exe.png)
 
 ---
 
@@ -512,15 +512,79 @@ int main() {
 
 ```
 
-![AST](./assets/binary_search_ast.png)
-![Semantic](./assets/binary_search_semantic.png)
-![IR](./assets/binary_search_ir.png)
-![Execution](./assets/binary_search_exe.png)
+![AST](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/binary_search_ast.png)
+![Semantic](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/binary_search_semantic.png)
+![IR](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/binary_search_ir.png)
+![Execution](https://raw.githubusercontent.com/RohitVenkatMutyala/extension/main/assets/binary_search_exe.png)
 
 ---
 
-# ⚠️ Disclaimer
+## 🔹 Control Flow (Switch, Break, Continue)
 
-Educational purpose only.
+```c
+/* tests/control_flow.rv */
+
+int process_numbers() {
+    int i = 0;
+    
+    print("Starting the loop...");
+    
+    while (i < 8) {
+        i = i + 1;
+        
+        // 1. Testing 'continue'
+        // This will skip the rest of the loop body when i is 3
+        if (i == 3) {
+            print("Skipping number 3 using continue!");
+            continue;
+        }
+        
+        // 2. Testing 'break' in a loop
+        // This will completely exit the while loop when i reaches 6
+        if (i == 6) {
+            print("Reached 6, breaking out of the loop entirely!");
+            break;
+        }
+        
+        // 3. Testing 'switch', 'case', and 'default'
+        switch (i) {
+            case 1:
+                print("Inside Switch: The number is ONE");
+                break; // Breaks out of the switch, prevents falling through to case 2
+                
+            case 2:
+                print("Inside Switch: The number is TWO");
+                break;
+                
+            case 4:
+                print("Inside Switch: The number is FOUR");
+                break;
+                
+            case 5:
+                print("Inside Switch: The number is FIVE");
+                break;
+                
+            default:
+                // If it's a number we didn't explicitly catch
+                print("Inside Switch: Unrecognized number");
+                break;
+        }
+    }
+    
+    print("Loop execution finished.");
+    return 0;
+}
+
+int main() {
+    print("--- Control Flow Test ---");
+    int status = process_numbers();
+    print("--- Test Complete ---");
+    
+    return status;
+}
+```
+
+---
+
 
 ---
